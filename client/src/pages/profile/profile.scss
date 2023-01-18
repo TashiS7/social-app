@@ -1,0 +1,69 @@
+@import "../../style.scss";
+
+.profile {
+  @include applyTheme($themes) {
+    background-color: themed("bgSoft");
+    .images {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .profilePic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 200px;
+        object-fit: cover;
+      }
+    }
+    .profileContainer {
+      padding: 20px 70px;
+
+      @include mobile {
+        padding: 10px;
+      }
+      @include tablet {
+        padding: 20px;
+      }
+      .userInfo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 180px;
+        box-shadow: 0px 0px 5px gray;
+        border-radius: 20px;
+        background-color: themed("bg");
+        color: themed("textColor");
+        padding: 50px;
+        margin-bottom: 20px;
+
+        @include mobile {
+          margin-top: 100px;
+          height: 30vh;
+          padding: 20px;
+          flex-direction: column;
+        }
+
+        .center {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          span {
+            font-size: 30px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

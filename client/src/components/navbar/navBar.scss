@@ -1,0 +1,85 @@
+@import "../../style.scss";
+
+.navbar {
+  @include applyTheme($themes) {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 50px;
+    background-color: themed("bg");
+    color: themed("textColor");
+    border-bottom: 1px solid themed("border");
+    z-index: 999;
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      span {
+        font-size: 30px;
+        font-weight: bold;
+        color: themed("logo");
+      }
+      .search {
+        padding: 7px;
+        gap: 7px;
+        border: 1px solid themed("border");
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+
+        input {
+          background-color: transparent;
+          color: themed("textColor");
+          width: 500px;
+          border: none;
+
+          @include mobile {
+            display: none;
+          }
+          @include tablet {
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include mobile {
+        display: none;
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        gap: 10px;
+
+        @include tablet {
+          display: none;
+        }
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        span {
+        }
+      }
+      button {
+        color: #fff;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        background-color: #1d8acf;
+        border-radius: 5px;
+      }
+    }
+  }
+}
